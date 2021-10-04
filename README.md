@@ -6,7 +6,7 @@ The EDOAL alignment elements are divided into columns, having each line represen
 
 This tool also implements evaluation methods based on direct comparison of table cells in order to find exact matches between two alignments (usually reference and candidate alignment), but also the mappings that were missing in the candidate alignment, which facilitates an overview analysis of the results when assessing performance in terms of precision and recall, respectively.
 
-Check the tutorial python notebook for more information on how to use the tool.
+Check out the tutorial python notebook for more information on how to use the tool.
 
 ## Authors
 - Beatriz Lima
