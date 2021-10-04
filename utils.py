@@ -33,11 +33,11 @@ class Parser:
             ent2 = cell.find("{}entity2".format(self.ont_web_format))
             ent1, ent1_type, const1 = self.parse_entity(ent1)
             ent2, ent2_type, const2 = self.parse_entity(ent2)
-            type_aln = get_type_aln(const1, const2, ent1_type, ent2_type) 
+            type_aln = self.get_type_aln(const1, const2, ent1_type, ent2_type) 
             measure = float(cell.find("{}measure".format(self.ont_web_format)).text)
             relation = cell.find("{}relation".format(self.ont_web_format)).text
 
-        mappings.append(
+            mappings.append(
             pd.DataFrame(
                 data={
                     "ent1_type":[ent1_type],
@@ -55,7 +55,7 @@ class Parser:
         return pd.concat(mappings, ignore_index=True)
 
     # This method parses the edoal entity elements to a more human readable form
-    def self.parse_entity(self, entity):
+    def parse_entity(self, entity):
         # (global) entity type is the first element inside the <entity1> element
         ent_type = str(entity[0]).split("'")[1].replace(self.edoal_namespace, "")
         ent_value = ""
@@ -71,18 +71,18 @@ class Parser:
             c = str(ent).split("'")[1].replace(self.edoal_namespace, "")
             if c in self.construction:
                 # Process expressions inside constructor
-                ent_value += recursive(ent)
+                ent_value += self.recursive(ent)
 
             # AttributeRestrictions
             elif c == "onAttribute":
-                ent_value += "onAttribute: " + recursive(ent)
+                ent_value += "onAttribute: " + self.recursive(ent)
                 continue
             elif c == "class": 
                 ent_value += "class: " + ent[0].get('{}about'.format(self.rdf_namespace))
                 c="-"
                 continue
             elif c == "exists": 
-                ent_value += "class: " + recursive(ent)
+                ent_value += "class: " + self.recursive(ent)
                 c="-"
                 continue
             elif c == "comparator":
@@ -107,20 +107,20 @@ class Parser:
 
         return ent_value, ent_type, c
 
-    #This method recursively processes the nested expressions
+    #This method self.recursively processes the nested expressions
     def recursive(self, element):
         s = ""
         for e in element:
             name = str(e).split("'")[1].replace(self.edoal_namespace, "")
-            if (process_simple_expression(name, e) != False):
+            if (self.process_simple_expression(name, e) != False):
                 #simple expression
-                s += process_simple_expression(name, e)
+                s += self.process_simple_expression(name, e)
             else:
                 #nested expression
                 sub_const = str(e[0]).split("'")[1].replace(self.edoal_namespace, "")
                 if (sub_const in self.construction):
                     s += "{}{{ ".format(sub_const).upper()
-                    s += recursive(e[0])
+                    s += self.recursive(e[0])
                     s += "} "
         return s
 
@@ -129,7 +129,7 @@ class Parser:
         s= ""
         # (Property and relation) Restrictions 
         if name in self.restriction1:
-            s += name + " (" + recursive(element[0])
+            s += name + " (" + self.recursive(element[0])
 
         # (Attribute) Restrictions 
         if name in self.restriction2:
@@ -137,13 +137,13 @@ class Parser:
             for e in element:
                 e_name = str(e).split("'")[1].replace(self.edoal_namespace, "")
                 if e_name == "onAttribute":
-                    s += "onAttribute: " + recursive(e)
+                    s += "onAttribute: " + self.recursive(e)
                     continue
                 elif e_name == "class": 
                     s += ", class: " + e[0].get('{}about'.format(self.rdf_namespace))
                     continue
                 elif e_name == "exists": 
-                    s += ", class: " + recursive(e)
+                    s += ", class: " + self.recursive(e)
                     continue
                 elif e_name == "comparator":
                     comparator = e.get('{}resource'.format(self.rdf_namespace))
@@ -188,14 +188,25 @@ class Parser:
             label = _element.find('{}label'.format(self.rdfs_namespace))
             if(label is not None):
                 labels[entity] = label.text
-
         return labels
+    
+    def replace_labels(self, df, column_name, labels):
+        l = []
+        for i in df[column_name]:
+            if i in labels:
+                l.append(labels[i])
+            else:
+                l.append(i)
+
+        df[column_name] = l
+        return df
 
     def evaluate(self, df, ref_path, mode):
-        # Mode: "full", "preview", "missing"
+        # Mode: "full", "found", "missing"
         # Namespaces -> reference namespaces have a '#' attached to the end
-        #self.edoal_namespace = "{http://ns.inria.org/edoal/1.0/#}"
-        ref_df = extract_mappings(ref_path)
+        pref = Parser(False)
+        ref_df = pref.extract_mappings(ref_path)
+       
         #l = []
         #for i in ref_df['entity1']:
         #    l.append(i.replace('#','/'))
@@ -203,21 +214,26 @@ class Parser:
         #ref_df['entity1'] = l
 
         if(mode == "full"):
-            evaluation = df.merge(ref_df, how='left', on=['entity1', 'entity2'], suffixes = ["", "_ref"])
+            evaluation = df.merge(ref_df, how='outer', on=['entity1', 'entity2'], suffixes = ["", "_ref"])
             evaluation.drop(axis=1, 
                             labels= ['ent1_type_ref','constructor1_ref','ent2_type_ref','constructor2_ref',
                              'type_of_alignment_ref', 'measure_ref'],
                            inplace=True)
             evaluation.fillna(" ", inplace=True)
-        if(mode == "preview"):
+            
+        if(mode == "found"):
             evaluation = df.merge(ref_df, how='inner', on=['entity1', 'entity2'], suffixes = ["", "_ref"])
             evaluation = evaluation[['entity1', 'entity2','relation','relation_ref']]
 
         if(mode == "missing"):
-            evaluation = ref_df.merge(df, how='left', on=['entity1', 'entity2'], suffixes = ["", "_results"])
+            evaluation = ref_df.merge(df, how='left', on=['entity1', 'entity2'], suffixes = ["_ref", ""])
             found = evaluation.dropna()
             evaluation.drop(axis=0, labels=found.index, inplace=True)
-            evaluation = evaluation[['ent1_type','entity1','constructor1','ent2_type','entity2','constructor2',
-                             'type_of_alignment','relation']]
+            evaluation = evaluation[['ent1_type_ref','entity1','constructor1_ref','ent2_type_ref','entity2',
+                        'constructor2_ref','type_of_alignment_ref','relation_ref']]
 
         return evaluation
+
+    # This function returns the number of different mappings types that exist in the given alignment
+    def check_mapping_types(self, df):
+        return df.groupby(['ent1_type','ent2_type']).size().reset_index(name='Count')
