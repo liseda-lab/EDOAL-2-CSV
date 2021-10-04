@@ -1,0 +1,446 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rdf:RDF xmlns='http://knowledgeweb.semanticweb.org/heterogeneity/alignment#'
+	xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+	xmlns:xsd='http://www.w3.org/2001/XMLSchema#'
+	xmlns:align='http://knowledgeweb.semanticweb.org/heterogeneity/alignment#'
+	xmlns:edoal='http://ns.inria.org/edoal/1.0/'>
+	<Alignment>
+		<xml>yes</xml>
+		<level>2EDOAL</level>
+		<type>null</type>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Class rdf:about="https://enslaved.org/ontology/PlaceTypeCV"/>
+				</entity1>
+				<entity2>
+					<edoal:Class rdf:about="https://lod.enslaved.org/entity/Q205"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>&gt;</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Class rdf:about="https://enslaved.org/ontology/Place"/>
+				</entity1>
+				<entity2>
+					<edoal:Class rdf:about="https://lod.enslaved.org/entity/Q301"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Class rdf:about="https://enslaved.org/ontology/EntityWithProvenance"/>
+				</entity1>
+				<entity2>
+					<edoal:Class rdf:about="https://lod.enslaved.org/entity/Q67"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Class rdf:about="https://enslaved.org/ontology/Event"/>
+				</entity1>
+				<entity2>
+					<edoal:Class rdf:about="https://lod.enslaved.org/entity/Q238"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Class rdf:about="https://enslaved.org/ontology/AgeRecord"/>
+				</entity1>
+				<entity2>
+					<edoal:Class rdf:about="http://wikiba.se/ontology#Statement"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>&lt;</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Class rdf:about="https://enslaved.org/ontology/Occupations"/>
+				</entity1>
+				<entity2>
+					<edoal:Class rdf:about="https://lod.enslaved.org/entity/Q108"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Class rdf:about="https://enslaved.org/ontology/EventTypes"/>
+				</entity1>
+				<entity2>
+					<edoal:Class rdf:about="https://lod.enslaved.org/entity/Q282"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Class rdf:about="https://enslaved.org/ontology/DocumentTypes"/>
+				</entity1>
+				<entity2>
+					<edoal:Class rdf:about="https://lod.enslaved.org/entity/Q122"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Class rdf:about="https://enslaved.org/ontology/InterAgentRelationshipTypes"/>
+				</entity1>
+				<entity2>
+					<edoal:Class rdf:about="https://lod.enslaved.org/entity/Q463"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Class rdf:about="https://enslaved.org/ontology/ParticipantRoleTypes"/>
+				</entity1>
+				<entity2>
+					<edoal:Class rdf:about="https://lod.enslaved.org/entity/Q316"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Class rdf:about="https://enslaved.org/ontology/PlaceCV"/>
+				</entity1>
+				<entity2>
+					<edoal:Class rdf:about="https://lod.enslaved.org/entity/Q303403"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Class rdf:about="https://enslaved.org/ontology/ECVO"/>
+				</entity1>
+				<entity2>
+					<edoal:Class rdf:about="https://lod.enslaved.org/entity/Q298"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Class rdf:about="https://enslaved.org/ontology/Person"/>
+				</entity1>
+				<entity2>
+					<edoal:Class rdf:about="https://lod.enslaved.org/entity/Q410"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Property rdf:about="http://schema.org/description"/>
+				</entity1>
+				<entity2>
+					<edoal:Relation rdf:about="https://lod.enslaved.org/prop/P72"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>&gt;</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Relation rdf:about="https://enslaved.org/ontology/hasNameRecord"/>
+				</entity1>
+				<entity2>
+					<edoal:Relation rdf:about="https://lod.enslaved.org/prop/P73"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>&gt;</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Relation rdf:about="https://enslaved.org/ontology/hasValue"/>
+				</entity1>
+				<entity2>
+					<edoal:Relation rdf:about="https://lod.enslaved.org/prop/statement/P22"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>&gt;</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Relation rdf:about="https://enslaved.org/ontology/hasStatusGeneratedEvent"/>
+				</entity1>
+				<entity2>
+					<edoal:Relation rdf:about="https://lod.enslaved.org/prop/qualifier/P34"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Relation rdf:about="https://enslaved.org/ontology/hasSexRecord"/>
+				</entity1>
+				<entity2>
+					<edoal:Relation rdf:about="https://lod.enslaved.org/prop/P31"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Relation rdf:about="https://enslaved.org/ontology/hasRaceRecord"/>
+				</entity1>
+				<entity2>
+					<edoal:Relation rdf:about="https://lod.enslaved.org/prop/P32"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Relation rdf:about="https://enslaved.org/ontology/hasPersonStatusRecord"/>
+				</entity1>
+				<entity2>
+					<edoal:Relation rdf:about="https://lod.enslaved.org/prop/P33"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Relation rdf:about="https://enslaved.org/ontology/hasPlaceTypeCV"/>
+				</entity1>
+				<entity2>
+					<edoal:Relation rdf:about="https://lod.enslaved.org/prop/P8"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Relation rdf:about="https://enslaved.org/ontology/hasAgeRecord"/>
+				</entity1>
+				<entity2>
+					<edoal:Property rdf:about="http://schema.org/description"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>&lt;</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Relation rdf:about="https://enslaved.org/ontology/isRelationshipFrom"/>
+				</entity1>
+				<entity2>
+					<edoal:Relation rdf:about="https://lod.enslaved.org/prop/P39"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Relation rdf:about="https://enslaved.org/ontology/hasInterAgentRelationshipType"/>
+				</entity1>
+				<entity2>
+					<edoal:Relation rdf:about="https://lod.enslaved.org/prop/statement/P39"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Relation rdf:about="https://enslaved.org/ontology/hasOriginRecord"/>
+				</entity1>
+				<entity2>
+					<edoal:Relation rdf:about="https://lod.enslaved.org/prop/P46"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Relation rdf:about="https://enslaved.org/ontology/hasECVO"/>
+				</entity1>
+				<entity2>
+					<edoal:Relation rdf:about="https://lod.enslaved.org/prop/statement/P46"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Relation rdf:about="https://enslaved.org/ontology/hasOccupationRecord"/>
+				</entity1>
+				<entity2>
+					<edoal:Relation rdf:about="https://lod.enslaved.org/prop/P22"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Relation rdf:about="https://enslaved.org/ontology/recordedAt"/>
+				</entity1>
+				<entity2>
+					<edoal:Relation rdf:about="https://lod.enslaved.org/prop/qualifier/P19"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>&gt;</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Relation rdf:about="https://enslaved.org/ontology/hasParticipantRoleRecord"/>
+				</entity1>
+				<entity2>
+					<edoal:Relation rdf:about="https://lod.enslaved.org/prop/P17"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Relation rdf:about="https://enslaved.org/ontology/refersToPlaceOfOrigin"/>
+				</entity1>
+				<entity2>
+					<edoal:Relation rdf:about="https://lod.enslaved.org/prop/qualifier/P47"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Relation rdf:about="https://enslaved.org/ontology/hasParticipantRoleType"/>
+				</entity1>
+				<entity2>
+					<edoal:Relation rdf:about="https://lod.enslaved.org/prop/statement/P17"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Relation rdf:about="https://enslaved.org/ontology/isRelationshipTo"/>
+				</entity1>
+				<entity2>
+					<edoal:Relation rdf:about="https://lod.enslaved.org/prop/qualifier/P40"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Relation rdf:about="https://enslaved.org/ontology/hasTemporalExtent"/>
+				</entity1>
+				<entity2>
+					<edoal:Relation rdf:about="https://lod.enslaved.org/prop/P63"/>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>&gt;</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Class rdf:about="https://enslaved.org/ontology/PersonStatusRecord"/>
+				</entity1>
+				<entity2>
+					<edoal:AttributeDomainRestriction>
+						<edoal:onAttribute>
+							<edoal:Relation rdf:about="https://lod.enslaved.org/prop/statement/P33"/>
+						</edoal:onAttribute>
+						<edoal:class>
+							<edoal:Class rdf:about="https://lod.enslaved.org/entity/Q375"/>
+						</edoal:class>
+					</edoal:AttributeDomainRestriction>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>=</relation>
+			</Cell>
+		</map>
+		<map>
+			<Cell>
+				<entity1>
+					<edoal:Class rdf:about="https://enslaved.org/ontology/SexRecord"/>
+				</entity1>
+				<entity2>
+					<edoal:AttributeDomainRestriction>
+						<edoal:onAttribute>
+							<edoal:Relation rdf:about="http://www.w3.org/ns/prov#wasDerivedFrom"/>
+						</edoal:onAttribute>
+						<edoal:class>
+							<edoal:Class rdf:about="http://wikiba.se/ontology#Reference"/>
+						</edoal:class>
+					</edoal:AttributeDomainRestriction>
+				</entity2>
+				<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+				<relation>&lt;</relation>
+			</Cell>
+		</map>
+	</Alignment>
+</rdf:RDF>
